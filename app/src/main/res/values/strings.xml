@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Periodt</string>
+    <string name="button_next">CONTINUAR</string>
+    <string name="last_period">ÚLTIMO PERIODO</string>
+    <string name="last_period_date">Fecha de comienzo de tu último periodo</string>
+    <string name="last_period_duration">¿Cuántos días suele durar tu periodo?</string>
+    <string name="last_period_regularity">¿Tu menstruación suele ser regular?</string>
+    <string name="input_date">DD/MM/AAAA</string>
 </resources>
