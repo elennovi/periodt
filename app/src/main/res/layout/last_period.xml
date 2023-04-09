@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="350dp"
-        android:layout_height="125dp"
+        android:layout_height="150dp"
         android:background="round_outline"
         app:cardBackgroundColor="@color/dark_green"
         app:cardCornerRadius="15dp"
@@ -23,6 +23,20 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <Spinner
+                android:id="@+id/spinner3"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/dropdown"
+                android:hint="@string/dropdown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:layout_constraintVertical_bias="0.448" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -42,7 +56,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
-        android:layout_height="125dp"
+        android:layout_height="150dp"
         android:background="round_outline"
         app:cardBackgroundColor="@color/pink"
         app:cardCornerRadius="15dp"
@@ -75,7 +89,7 @@
             <EditText
                 android:id="@+id/editTextDate"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:ems="10"
                 android:inputType="date"
                 android:textAlignment="center"
@@ -91,7 +105,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="350dp"
-        android:layout_height="125dp"
+        android:layout_height="150dp"
         android:background="round_outline"
         app:cardBackgroundColor="@color/red"
         app:cardCornerRadius="15dp"
@@ -108,33 +122,46 @@
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="312dp"
-                android:layout_height="62dp"
+                android:layout_width="303dp"
+                android:layout_height="59dp"
                 android:text="@string/last_period_duration"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.578"
+                app:layout_constraintHorizontal_bias="0.51"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.253" />
+                app:layout_constraintVertical_bias="0.212" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:hint="@string/dropdown"
+                android:contentDescription="@string/dropdown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                app:layout_constraintVertical_bias="0.515" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_next"
+        android:layout_width="139dp"
+        android:layout_height="61dp"
         android:backgroundTint="@color/dark_red"
+        android:text="@string/button_next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView2"
+        app:layout_constraintVertical_bias="0.573" />
 
     <TextView
         android:id="@+id/textView"

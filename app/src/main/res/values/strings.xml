@@ -6,4 +6,9 @@
     <string name="last_period_duration">¿Cuántos días suele durar tu periodo?</string>
     <string name="last_period_regularity">¿Tu menstruación suele ser regular?</string>
     <string name="input_date">DD/MM/AAAA</string>
+    <string name="dropdown">Selecciona uno</string>
+    <string name="calendar">CALENDARIO</string>
+    <string name="next_fertility_period">Próximo periodo fértil en </string>
+    <string name="next_period">Próxima menstruación en </string>
+
 </resources>
