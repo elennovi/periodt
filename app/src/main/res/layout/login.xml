@@ -42,13 +42,13 @@
                 android:layout_width="170dp"
                 android:layout_height="67dp"
                 android:backgroundTint="@color/dark_red"
-                android:text="@string/register"
+                android:text="@string/login"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.787" />
+                app:layout_constraintVertical_bias="0.700" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView5"
@@ -74,41 +74,6 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="@string/password"
-                        android:inputType="textPassword"
-                        android:textSize="15sp"
-                        android:textAlignment="center"
-                        android:textColor="@color/dark_red"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView3"
-                android:layout_width="221dp"
-                android:layout_height="47dp"
-                android:background="round_outline"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.530">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <EditText
-                        android:id="@+id/repeat_password"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="@string/repeat_password"
                         android:inputType="textPassword"
                         android:textSize="15sp"
                         android:textAlignment="center"
@@ -156,10 +121,10 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/login_text"
+                android:id="@+id/register_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/login_text"
+                android:text="@string/register_text"
                 android:textColor="@color/dark_red"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -170,11 +135,11 @@
                 app:layout_constraintVertical_bias="0.932" />
 
             <Button
-                android:id="@+id/login_redirect"
+                android:id="@+id/register_redirect"
                 android:layout_width="140dp"
                 android:layout_height="37dp"
                 android:background="@color/transparent"
-                android:text="@string/login_redirect"
+                android:text="@string/register_redirect"
                 android:textAllCaps="false"
                 android:gravity="right"
                 android:textColor="@color/red"
