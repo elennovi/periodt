@@ -11,4 +11,15 @@
     <string name="next_fertility_period">Próximo periodo fértil en </string>
     <string name="next_period">Próxima menstruación en </string>
 
+    <string name="app_title">PERI🩸DT</string>
+    <string name="email_addr">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="repeat_password">Repetir contraseña</string>
+    <string name="register">REGISTRARSE</string>
+    <string name="login">INICIAR SESIÓN</string>
+    <string name="login_text">¿Ya tienes una cuenta?</string>
+    <string name="register_text">¿No tienes una cuenta?</string>
+    <string name="login_redirect"><u>Inicia Sesión</u></string>
+    <string name="register_redirect"><u>Regístrate</u></string>
+
 </resources>
