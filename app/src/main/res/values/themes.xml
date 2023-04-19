@@ -13,4 +13,18 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="CustomCalendarMonth" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/red</item>
+        <item name="colorAccent">@color/pink</item>
+    </style>
+
+    <style name="CustomCalendarDay" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/darkest_red</item>
+    </style>
+
+    <style name="CustomCalendarWeek" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/dark_green</item>
+    </style>
+
 </resources>
