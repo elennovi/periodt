@@ -22,4 +22,7 @@
     <string name="login_redirect"><u>Inicia Sesión</u></string>
     <string name="register_redirect"><u>Regístrate</u></string>
 
+    <string name="same_pwd_error">Las contraseñas son diferentes</string>
+    <string name="error">ERROR</string>
+
 </resources>
