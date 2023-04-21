@@ -22,7 +22,23 @@
     <string name="login_redirect"><u>Inicia Sesión</u></string>
     <string name="register_redirect"><u>Regístrate</u></string>
 
-    <string name="same_pwd_error">Las contraseñas son diferentes</string>
     <string name="error">ERROR</string>
+    <string name="same_pwd_error">Las contraseñas introducidas no son iguales</string>
+    <string name="taken_email">El correo introducido ya está en uso</string>
+    <string name="incorrect_pwd">La contraseña introducida no es correcta</string>
+    <string name="email_not_found">El correo introducido no existe</string>
+
+    <string-array name="duration_array">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="yesno_array">
+        <item>Sí</item>
+        <item>No</item>
+    </string-array>
 
 </resources>

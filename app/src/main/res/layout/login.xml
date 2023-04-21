@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/beige">
+    android:background="@color/beige"
+    tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -37,7 +38,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/register_btn"
+                android:id="@+id/login_btn"
                 android:layout_width="170dp"
                 android:layout_height="67dp"
                 android:backgroundTint="@color/dark_red"
@@ -67,7 +68,7 @@
                     android:layout_height="match_parent">
 
                     <EditText
-                        android:id="@+id/password"
+                        android:id="@+id/password_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -101,7 +102,7 @@
                     android:layout_height="match_parent">
 
                     <EditText
-                        android:id="@+id/email_addr"
+                        android:id="@+id/email_addr_login"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ems="10"
