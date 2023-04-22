@@ -17,7 +17,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String DB_NAME = "periodtdb";
 
     // below int is our database version
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
 
     // below variable is for our table name.
     private static final String TABLE_NAME = "PADUser";
@@ -49,7 +49,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 + PWD_COL + " TEXT, "
                 + DURATION_PERIOD_COL + " INTEGER,"
                 + REGULAR_PERIOD_COL + " TEXT, "
-                + LAST_PERIOD_COL + "TEXT)";
+                + LAST_PERIOD_COL + " TEXT)";
 
         // at last we are calling a exec sql
         // method to execute above sql query
