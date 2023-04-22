@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -48,14 +49,14 @@ public class DBHandler extends SQLiteOpenHelper {
                 + PWD_COL + " TEXT, "
                 + DURATION_PERIOD_COL + " INTEGER,"
                 + REGULAR_PERIOD_COL + " TEXT, "
-                + LAST_PERIOD_COL + "DATE)";
+                + LAST_PERIOD_COL + "TEXT)";
 
         // at last we are calling a exec sql
         // method to execute above sql query
         db.execSQL(query);
     }
 
-    public void registerPeriod(String lastPeriod, String duration, String regular){
+    public void registerPeriod(String lastPeriod, String duration, String regular, String uid){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -64,7 +65,8 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(DURATION_PERIOD_COL, duration);
         values.put(REGULAR_PERIOD_COL, regular);
 
-        //myDB.update(TableName, "(Field1, Field2, Field3)" + " VALUES ('Bob', 19, 'Male')", "where _id = 1", null);
+        String[] args = new String []{uid};
+        db.update(TABLE_NAME, values, "id=?", args);
 
         db.close();
     }
@@ -120,5 +122,23 @@ public class DBHandler extends SQLiteOpenHelper {
         // this method is called to check if the table exists already.
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
+    }
+
+    public String getIdByEmail(String email){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + EMAIL_COL + " = ?";
+        String[] selectionArgs = new String[]{email};
+
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+        String id = "0";
+        if(cursor != null){
+            if (cursor.moveToFirst()) {
+                id = cursor.getString(0);
+                Log.i("CURSOR_ID", id);
+                cursor.close();
+            }
+        }
+        return id;
     }
 }

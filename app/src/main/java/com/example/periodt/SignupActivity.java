@@ -72,6 +72,9 @@ public class SignupActivity extends AppCompatActivity {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("isLogged", true);
+
+                String uid = db.getIdByEmail(email);
+                editor.putString("uid", uid);
                 editor.apply();
 
                 Intent intent = new Intent(this, LastperiodActivity.class);

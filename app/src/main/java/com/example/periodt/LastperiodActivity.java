@@ -3,13 +3,19 @@ package com.example.periodt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 public class LastperiodActivity extends AppCompatActivity {
+
+    private DBHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +39,40 @@ public class LastperiodActivity extends AppCompatActivity {
         Button continue_btn = (Button) findViewById(R.id.continue_btn);
         continue_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                submitData();
                 redirectCalendar();
             }
         });
+
+        // get database
+        db = new DBHandler(LastperiodActivity.this);
     }
 
     private void redirectCalendar() {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+    }
+    private void submitData(){
+        // Duration
+        Spinner duration_sp = (Spinner) findViewById(R.id.period_duration);
+        String duration = duration_sp.getSelectedItem().toString();
+
+        // Last one
+        EditText last_et = (EditText) findViewById(R.id.select_last_date);
+        String last = last_et.getText().toString();
+
+        // Regularity
+        Spinner regularity_sp = (Spinner) findViewById(R.id.regular_period);
+        String regularity = regularity_sp.getSelectedItem().toString();
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String uid = prefs.getString("uid", "0");
+
+        // Submit the data
+        Log.i("DURATION", duration);
+        Log.i("LAST_PERIOD", last);
+        Log.i("REGULARITY", regularity);
+        Log.i("UID", uid);
+        db.registerPeriod(last, duration, regularity, uid);
     }
 }

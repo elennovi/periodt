@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,6 +55,10 @@ public class LoginActivity extends AppCompatActivity {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("isLogged", true);
+
+                String uid = db.getIdByEmail(email);
+                editor.putString("uid", uid);
+                Log.i("UID", uid);
                 editor.apply();
 
                 Intent intent = new Intent(this, LastperiodActivity.class);
