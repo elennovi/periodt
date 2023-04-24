@@ -31,7 +31,7 @@ public class LastperiodActivity extends AppCompatActivity {
 
         Spinner spinner_regular = (Spinner) findViewById(R.id.regular_period);
         ArrayAdapter<CharSequence> adapter_regular = ArrayAdapter.createFromResource(this,
-                R.array.yesno_array, android.R.layout.simple_spinner_item);
+                R.array.regular_array, android.R.layout.simple_spinner_item);
         adapter_regular.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_regular.setAdapter(adapter_regular);
 
@@ -49,7 +49,7 @@ public class LastperiodActivity extends AppCompatActivity {
     }
 
     private void redirectCalendar() {
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, CalendarActivity.class);
         startActivity(intent);
     }
     private void submitData(){
@@ -63,7 +63,7 @@ public class LastperiodActivity extends AppCompatActivity {
 
         // Regularity
         Spinner regularity_sp = (Spinner) findViewById(R.id.regular_period);
-        String regularity = regularity_sp.getSelectedItem().toString();
+        String cycle = regularity_sp.getSelectedItem().toString();
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String uid = prefs.getString("uid", "0");
@@ -71,8 +71,8 @@ public class LastperiodActivity extends AppCompatActivity {
         // Submit the data
         Log.i("DURATION", duration);
         Log.i("LAST_PERIOD", last);
-        Log.i("REGULARITY", regularity);
+        Log.i("CYCLE", cycle);
         Log.i("UID", uid);
-        db.registerPeriod(last, duration, regularity, uid);
+        db.registerPeriod(last, duration, cycle, uid);
     }
 }

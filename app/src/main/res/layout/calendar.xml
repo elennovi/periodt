@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/beige"
-    tools:context=".CalendarActivity">
+    tools:context=".CalendarActivity"
+    tools:ignore="MissingClass">
 
     <TextView
         android:id="@+id/textView"
@@ -38,7 +39,7 @@
         app:layout_constraintVertical_bias="0.168" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/next_period_btn"
         android:layout_width="350dp"
         android:layout_height="80dp"
         android:backgroundTint="@color/red"
@@ -53,7 +54,7 @@
         app:layout_constraintVertical_bias="0.229" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/next_fertile_btn"
         android:layout_width="350dp"
         android:layout_height="80dp"
         android:backgroundTint="@color/dark_green"
@@ -64,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/next_period_btn"
         app:layout_constraintVertical_bias="0.149" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
