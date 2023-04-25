@@ -88,6 +88,7 @@ public class CalendarActivity extends AppCompatActivity {
 
     private String nextPeriod(){
         String lastPeriod = db.getLastPeriod(uid);
+        Log.i("LAST_PERIOD", lastPeriod);
         String cycle = db.getCycle(uid);
         String duration = db.getDuration(uid);
 
