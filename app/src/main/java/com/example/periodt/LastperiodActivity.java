@@ -73,6 +73,7 @@ public class LastperiodActivity extends AppCompatActivity {
         Log.i("LAST_PERIOD", last);
         Log.i("CYCLE", cycle);
         Log.i("UID", uid);
+
         db.registerPeriod(last, duration, cycle, uid);
     }
 }
