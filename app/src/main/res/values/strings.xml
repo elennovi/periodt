@@ -4,7 +4,7 @@
     <string name="last_period">ÚLTIMO PERIODO</string>
     <string name="last_period_date">Fecha de comienzo de tu último periodo</string>
     <string name="last_period_duration">¿Cuántos días suele durar tu periodo?</string>
-    <string name="last_period_regularity">¿Tu menstruación suele ser regular?</string>
+    <string name="last_period_regularity">¿Cuánto suele durar tu ciclo menstrual?</string>
     <string name="input_date">DD/MM/AAAA</string>
     <string name="dropdown">Selecciona uno</string>
     <string name="calendar">CALENDARIO</string>
@@ -29,16 +29,39 @@
     <string name="email_not_found">El correo introducido no existe</string>
 
     <string-array name="duration_array">
+        <item>2</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
         <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
     </string-array>
 
-    <string-array name="yesno_array">
-        <item>Sí</item>
-        <item>No</item>
+    <string-array name="regular_array">
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
     </string-array>
 
 </resources>

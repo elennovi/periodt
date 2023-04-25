@@ -17,7 +17,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String DB_NAME = "periodtdb";
 
     // below int is our database version
-    private static final int DB_VERSION = 2;
+    private static final int DB_VERSION = 3;
 
     // below variable is for our table name.
     private static final String TABLE_NAME = "PADUser";
@@ -29,7 +29,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     private static  final String LAST_PERIOD_COL = "lastPeriod";
     private static  final String DURATION_PERIOD_COL = "durationPeriod";
-    private static  final String REGULAR_PERIOD_COL = "regularPeriod";
+    private static  final String CYCLE_PERIOD_COL = "cyclePeriod";
 
 
     public DBHandler(Context context) {
@@ -48,7 +48,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 + EMAIL_COL + " TEXT,"
                 + PWD_COL + " TEXT, "
                 + DURATION_PERIOD_COL + " INTEGER,"
-                + REGULAR_PERIOD_COL + " TEXT, "
+                + CYCLE_PERIOD_COL + " TEXT, "
                 + LAST_PERIOD_COL + " TEXT)";
 
         // at last we are calling a exec sql
@@ -56,14 +56,14 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(query);
     }
 
-    public void registerPeriod(String lastPeriod, String duration, String regular, String uid){
+    public void registerPeriod(String lastPeriod, String duration, String cycle, String uid){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
 
         values.put(LAST_PERIOD_COL, lastPeriod);
         values.put(DURATION_PERIOD_COL, duration);
-        values.put(REGULAR_PERIOD_COL, regular);
+        values.put(CYCLE_PERIOD_COL, cycle);
 
         String[] args = new String []{uid};
         db.update(TABLE_NAME, values, "id=?", args);
@@ -141,4 +141,62 @@ public class DBHandler extends SQLiteOpenHelper {
         }
         return id;
     }
+
+    public String getLastPeriod(String uid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + ID_COL + " = ?";
+        String[] selectionArgs = new String[]{uid};
+
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+        String lastPeriod = "";
+        if(cursor != null){
+            if (cursor.moveToFirst()) {
+                // column 5 is lastperiod
+                lastPeriod = cursor.getString(5);
+
+                cursor.close();
+            }
+        }
+        return lastPeriod;
+    }
+
+    public String getDuration(String uid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + ID_COL + " = ?";
+        String[] selectionArgs = new String[]{uid};
+
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+        String duration = "";
+        if(cursor != null){
+            if (cursor.moveToFirst()) {
+                // column 3 is duration
+                duration = cursor.getString(3);
+
+                cursor.close();
+            }
+        }
+        return duration;
+    }
+
+    public String getCycle(String uid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + ID_COL + " = ?";
+        String[] selectionArgs = new String[]{uid};
+
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+        String regular = "";
+        if(cursor != null){
+            if (cursor.moveToFirst()) {
+                // column 3 is duration
+                regular = cursor.getString(4);
+
+                cursor.close();
+            }
+        }
+        return regular;
+    }
+
 }
