@@ -11,59 +11,35 @@
         android:id="@+id/notification_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
+        android:layout_marginTop="34dp"
         android:text="@string/notification_text"
         android:textColor="@color/dark_red"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/back_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#0000"
-        android:text="⬅"
-        android:textColor="@color/dark_red"
-        android:textSize="48sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="3dp"
-        android:layout_marginTop="106dp"
-        android:layout_marginBottom="105dp"
-        android:background="@color/pink"
-        app:layout_constraintBottom_toTopOf="@+id/fertile_notif_spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="125dp" />
 
     <TextView
         android:id="@+id/fertile_notif_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginStart="28dp"
         android:text="@string/fertile_notif_text"
         android:textColor="@color/darkest_red"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fertile_notif_switch"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        app:layout_constraintTop_toTopOf="@+id/fertile_notif_switch" />
 
     <TextView
         android:id="@+id/fertile_days_notif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="35dp"
         android:text="@string/fertile_days_notif"
         android:textColor="@color/darkest_red"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fertile_notif_text" />
 
@@ -71,10 +47,11 @@
         android:id="@+id/period_notif_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="47dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="33dp"
         android:text="@string/period_notif_text"
         android:textColor="@color/darkest_red"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fertile_days_notif" />
 
@@ -82,19 +59,19 @@
         android:id="@+id/period_days_notif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
+        android:layout_marginEnd="13dp"
         android:text="@string/period_days_notif"
         android:textColor="@color/darkest_red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/period_notif_spinner"
+        app:layout_constraintTop_toTopOf="@+id/period_notif_spinner" />
 
     <Switch
         android:id="@+id/fertile_notif_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="29dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="28dp"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -103,29 +80,47 @@
         android:id="@+id/period_notif_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="29dp"
-        android:layout_marginBottom="38dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="28dp"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/period_notif_spinner"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Spinner
         android:id="@+id/fertile_notif_spinner"
-        android:layout_width="95dp"
+        android:layout_width="96dp"
         android:layout_height="28dp"
-        android:layout_marginTop="58dp"
-        android:layout_marginBottom="66dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toBottomOf="@+id/period_notif_switch"
-        app:layout_constraintEnd_toStartOf="@+id/fertile_notif_switch"
-        app:layout_constraintStart_toStartOf="@+id/fertile_notif_switch"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/fertile_notif_switch" />
 
     <Spinner
         android:id="@+id/period_notif_spinner"
-        android:layout_width="92dp"
+        android:layout_width="0dp"
         android:layout_height="29dp"
-        android:layout_marginStart="288dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintEnd_toEndOf="@+id/fertile_notif_spinner"
+        app:layout_constraintStart_toEndOf="@+id/notification_text"
+        app:layout_constraintTop_toBottomOf="@+id/period_notif_text" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/pink"
+        app:itemBackground="@color/pink"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:menu="@menu/menu" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

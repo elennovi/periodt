@@ -40,6 +40,24 @@
     <string name="period_notif_text">Notificación ciclo menstrual</string>
     <string name="period_days_notif">Aviso comienzo ciclo menstrual</string>
 
+    <string name="tracker_heading">Seguimiento</string>
+    <string name="period_text">He tenido la regla hoy</string>
+    <string name="sympton_text">Síntomas</string>
+    <string name="secrecion_text">Secreción</string>
+    <string name="deseo_text">Deseo sexual</string>
+    <string name="cantidad_text">Cantidad de periodo</string>
+    <string name="manchado_text">Manchado</string>
+    <string name="bienestar_text">Bienestar</string>
+    <string name="spm_text">SPM</string>
+    <string name="save_btn">GUARDAR</string>
+    <string name="bajo">Bajo</string>
+    <string name="medio">Medio</string>
+    <string name="alto">Alto</string>
+    <string name="ligero">Ligero</string>
+    <string name="moderado">Moderado</string>
+    <string name="fuerte">Fuerte</string>
+    <string name="intenso">Intenso</string>
+
     <string-array name="duration_array">
         <item>2</item>
         <item>3</item>
@@ -70,8 +88,6 @@
         <item>34</item>
         <item>35</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="notif_array">
         <item>1</item>
