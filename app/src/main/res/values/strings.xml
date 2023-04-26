@@ -34,6 +34,11 @@
     <string name="fertile_notification_title">FERTILIDAD</string>
     <string name="fertile_notification_msg">¡Quedan menos de 5 días para tu periodo fertil!</string>
 
+    <string name="notification_text">Notificaciones</string>
+    <string name="fertile_notif_text">Notificación periodo fértil</string>
+    <string name="fertile_days_notif">Aviso comienzo ciclo fértil</string>
+    <string name="period_notif_text">Notificación ciclo menstrual</string>
+    <string name="period_days_notif">Aviso comienzo ciclo menstrual</string>
 
     <string-array name="duration_array">
         <item>2</item>
@@ -67,5 +72,18 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="notif_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
 
 </resources>

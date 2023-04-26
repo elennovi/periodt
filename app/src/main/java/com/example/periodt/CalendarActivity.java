@@ -124,8 +124,11 @@ public class CalendarActivity extends AppCompatActivity {
 
         Boolean periodNotifSent = prefs.getBoolean("periodNotifSent", false);
 
+        // get the settings for the notifications
+        boolean period_notif = prefs.getBoolean("period_notif", true);
+        int days_period_notif = prefs.getInt("days_period_notif", 5);
         // check if the current day is near the period starting date
-        if((Integer.parseInt(daysTillNextPeriod()) <= 5) && !periodNotifSent){
+        if(period_notif && (Integer.parseInt(daysTillNextPeriod()) <= days_period_notif) && !periodNotifSent){
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                     .setSmallIcon(R.drawable.blood)
                     .setContentTitle("MENSTRUACIÓN")
@@ -141,9 +144,12 @@ public class CalendarActivity extends AppCompatActivity {
             editor.putBoolean("periodNotifSent", true);
         }
 
+        // get the settings for the notifications
+        boolean fertile_notif = prefs.getBoolean("fertile_notif", true);
+        int days_fertile_notif = prefs.getInt("days_fertile_notif", 5);
         Boolean fertileNotifSent = prefs.getBoolean("fertileNotifSent", false);
         // check if the current day is near the fertile period starting date
-        if((Integer.parseInt(daysTillNextFertile()) <= 5) && !fertileNotifSent){
+        if(fertile_notif && (Integer.parseInt(daysTillNextFertile()) <= days_fertile_notif) && !fertileNotifSent){
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                     .setSmallIcon(R.drawable.blood)
                     .setContentTitle("FERTILIDAD")
