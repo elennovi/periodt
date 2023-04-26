@@ -1,5 +1,6 @@
 package com.example.periodt;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -16,9 +17,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -34,10 +39,39 @@ public class CalendarActivity extends AppCompatActivity {
     private CalendarView calendar;
     private String uid;
 
+    private BottomNavigationView navBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+        navBar = findViewById(R.id.navigation_bar);
+        navBar.setSelectedItemId(R.id.it_calendar);
+
+        navBar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.it_calendar){
+                    return true;
+                }
+                else if (item.getItemId() == R.id.it_tracker){
+                    startActivity(new Intent(getApplicationContext(), TrackerActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                }
+                else if (item.getItemId() == R.id.it_settings){
+                    startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                }
+                return false;
+            }
+        });
 
         db = new DBHandler(CalendarActivity.this);
         // get user uid

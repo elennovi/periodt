@@ -27,12 +27,12 @@
     <string name="taken_email">El correo introducido ya está en uso</string>
     <string name="incorrect_pwd">La contraseña introducida no es correcta</string>
     <string name="email_not_found">El correo introducido no existe</string>
-    <string name = "channel_name">Notificaciones</string>
-    <string name = "channel_description">Notificaciones de recordatorio de periodo menstrual y fértil</string>
-    <string name = "period_notification_title">MENSTRUACION</string>
-    <string name = "period_notification_msg">¡Quedan menos de 5 días para tu menstruación!</string>
-    <string name = "fertile_notification_title">FERTILIDAD</string>
-    <string name = "fertile_notification_msg">¡Quedan menos de 5 días para tu periodo fertil!</string>
+    <string name="channel_name">Notificaciones</string>
+    <string name="channel_description">Notificaciones de recordatorio de periodo menstrual y fértil</string>
+    <string name="period_notification_title">MENSTRUACION</string>
+    <string name="period_notification_msg">¡Quedan menos de 5 días para tu menstruación!</string>
+    <string name="fertile_notification_title">FERTILIDAD</string>
+    <string name="fertile_notification_msg">¡Quedan menos de 5 días para tu periodo fertil!</string>
 
 
     <string-array name="duration_array">
@@ -64,11 +64,8 @@
         <item>33</item>
         <item>34</item>
         <item>35</item>
-        <item>36</item>
-        <item>37</item>
-        <item>38</item>
-        <item>39</item>
-        <item>40</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
