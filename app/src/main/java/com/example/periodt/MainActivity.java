@@ -25,12 +25,13 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         boolean isLogged = prefs.getBoolean("isLogged", false);
         Intent intent;
-        /*if(isLogged) {
-            intent = new Intent(this, LastperiodActivity.class);
-        }
-        else{*/
+        if(isLogged) {
             intent = new Intent(this, SignupActivity.class);
-        //}
+            //intent = new Intent(this, LastperiodActivity.class);
+        }
+        else{
+            intent = new Intent(this, SignupActivity.class);
+        }
         startActivity(intent);
     }
 }

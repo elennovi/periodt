@@ -23,6 +23,10 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         Intent intent = getIntent();
 
         Button register = (Button) findViewById(R.id.register_btn);

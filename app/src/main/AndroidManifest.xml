@@ -18,6 +18,9 @@
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
+            android:name=".TrackerActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignupActivity"
             android:exported="false" />
         <activity

@@ -22,6 +22,10 @@ public class LastperiodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.last_period);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         // set spinners items
         Spinner spinner_duration = (Spinner) findViewById(R.id.period_duration);
         ArrayAdapter<CharSequence> adapter_duration = ArrayAdapter.createFromResource(this,

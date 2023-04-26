@@ -62,4 +62,18 @@
         app:layout_constraintEnd_toEndOf="@+id/next_period_btn"
         app:layout_constraintStart_toStartOf="@+id/next_period_btn" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/pink"
+        app:itemBackground="@color/pink"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
