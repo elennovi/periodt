@@ -27,6 +27,8 @@
     <string name="taken_email">El correo introducido ya está en uso</string>
     <string name="incorrect_pwd">La contraseña introducida no es correcta</string>
     <string name="email_not_found">El correo introducido no existe</string>
+    <string name="invalid_date">La fecha introducida no es válida</string>
+
     <string name="channel_name">Notificaciones</string>
     <string name="channel_description">Notificaciones de recordatorio de periodo menstrual y fértil</string>
     <string name="period_notification_title">MENSTRUACION</string>
