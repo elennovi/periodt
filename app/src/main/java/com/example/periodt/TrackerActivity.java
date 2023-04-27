@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
@@ -37,7 +39,7 @@ public class TrackerActivity extends AppCompatActivity {
         }
 
         navBar = findViewById(R.id.navigation_bar);
-        navBar.setSelectedItemId(R.id.it_calendar);
+        navBar.setSelectedItemId(R.id.it_tracker);
 
         navBar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -73,11 +75,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("period_yes_btn")){
-                    period_yes_btn.setColorFilter(Color.rgb(238,153,146));
+                    period_yes_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("period_yes_btn");
                 }
                 else{
-                    period_yes_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    period_yes_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("period_yes_btn");
                 }
             }
@@ -87,11 +89,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("period_no_btn")){
-                    period_no_btn.setColorFilter(Color.rgb(238,153,146));
+                    period_no_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("period_no_btn");
                 }
                 else{
-                    period_no_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    period_no_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("period_no_btn");
                 }
             }
@@ -103,11 +105,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("no_symptons_btn")){
-                    no_symptons_btn.setColorFilter(Color.rgb(238,153,146));
+                    no_symptons_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("no_symptons_btn");
                 }
                 else{
-                    no_symptons_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    no_symptons_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("no_symptons_btn");
                 }
             }
@@ -117,11 +119,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("colicos_btn")){
-                    colicos_btn.setColorFilter(Color.rgb(238,153,146));
+                    colicos_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("colicos_btn");
                 }
                 else{
-                    colicos_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    colicos_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("colicos_btn");
                 }
             }
@@ -131,11 +133,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("ovulacion_btn")){
-                    ovulacion_btn.setColorFilter(Color.rgb(238,153,146));
+                    ovulacion_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("ovulacion_btn");
                 }
                 else{
-                    ovulacion_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    ovulacion_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("ovulacion_btn");
                 }
             }
@@ -145,11 +147,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("sensibilidad_btn")){
-                    sensibilidad_btn.setColorFilter(Color.rgb(238,153,146));
+                    sensibilidad_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("sensibilidad_btn");
                 }
                 else{
-                    sensibilidad_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    sensibilidad_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("sensibilidad_btn");
                 }
             }
@@ -159,11 +161,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("headache_btn")){
-                    headache_btn.setColorFilter(Color.rgb(238,153,146));
+                    headache_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("headache_btn");
                 }
                 else{
-                    headache_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    headache_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("headache_btn");
                 }
             }
@@ -173,11 +175,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("nauseas_btn")){
-                    nauseas_btn.setColorFilter(Color.rgb(238,153,146));
+                    nauseas_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("nauseas_btn");
                 }
                 else{
-                    nauseas_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    nauseas_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("nauseas_btn");
                 }
             }
@@ -187,11 +189,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("lumbares_btn")){
-                    lumbares_btn.setColorFilter(Color.rgb(238,153,146));
+                    lumbares_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("lumbares_btn");
                 }
                 else{
-                    lumbares_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    lumbares_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("lumbares_btn");
                 }
             }
@@ -201,11 +203,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("piernas_btn")){
-                    piernas_btn.setColorFilter(Color.rgb(238,153,146));
+                    piernas_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("piernas_btn");
                 }
                 else{
-                    piernas_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    piernas_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("piernas_btn");
                 }
             }
@@ -215,11 +217,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("articulaciones_btn")){
-                    articulaciones_btn.setColorFilter(Color.rgb(238,153,146));
+                    articulaciones_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("articulaciones_btn");
                 }
                 else{
-                    articulaciones_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    articulaciones_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("articulaciones_btn");
                 }
             }
@@ -229,11 +231,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("vulvar_btn")){
-                    vulvar_btn.setColorFilter(Color.rgb(238,153,146));
+                    vulvar_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("vulvar_btn");
                 }
                 else{
-                    vulvar_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    vulvar_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("vulvar_btn");
                 }
             }
@@ -245,11 +247,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("blanco_btn")){
-                    blanco_btn.setColorFilter(Color.rgb(238,153,146));
+                    blanco_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("blanco_btn");
                 }
                 else{
-                    blanco_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    blanco_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("blanco_btn");
                 }
             }
@@ -259,11 +261,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("amarillo_btn")){
-                    amarillo_btn.setColorFilter(Color.rgb(238,153,146));
+                    amarillo_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("amarillo_btn");
                 }
                 else{
-                    amarillo_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    amarillo_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("amarillo_btn");
                 }
             }
@@ -273,11 +275,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("transparente_btn")){
-                    transparente_btn.setColorFilter(Color.rgb(238,153,146));
+                    transparente_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("transparente_btn");
                 }
                 else{
-                    transparente_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    transparente_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("transparente_btn");
                 }
             }
@@ -287,11 +289,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("verde_btn")){
-                    verde_btn.setColorFilter(Color.rgb(238,153,146));
+                    verde_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("verde_btn");
                 }
                 else{
-                    verde_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    verde_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("verde_btn");
                 }
             }
@@ -301,11 +303,12 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("marron_btn")){
-                    marron_btn.setColorFilter(Color.rgb(238,153,146));
+                    //marron_btn.setColorFilter(Color.rgb(238,153,146));
+                    marron_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("marron_btn");
                 }
                 else{
-                    marron_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    marron_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("marron_btn");
                 }
             }
@@ -315,11 +318,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("seco_btn")){
-                    seco_btn.setColorFilter(Color.rgb(238,153,146));
+                    seco_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("seco_btn");
                 }
                 else{
-                    seco_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    seco_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("seco_btn");
                 }
             }
@@ -329,11 +332,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("humedo_btn")){
-                    humedo_btn.setColorFilter(Color.rgb(238,153,146));
+                    humedo_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("humedo_btn");
                 }
                 else{
-                    humedo_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    humedo_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("humedo_btn");
                 }
             }
@@ -343,11 +346,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("pegajoso_btn")){
-                    pegajoso_btn.setColorFilter(Color.rgb(238,153,146));
+                    pegajoso_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("pegajoso_btn");
                 }
                 else{
-                    pegajoso_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    pegajoso_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("pegajoso_btn");
                 }
             }
@@ -357,11 +360,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("cremoso_btn")){
-                    cremoso_btn.setColorFilter(Color.rgb(238,153,146));
+                    cremoso_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("cremoso_btn");
                 }
                 else{
-                    cremoso_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    cremoso_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("cremoso_btn");
                 }
             }
@@ -475,11 +478,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("rojo_manchado_btn")){
-                    rojo_manchado_btn.setColorFilter(Color.rgb(238,153,146));
+                    rojo_manchado_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("rojo_manchado_btn");
                 }
                 else{
-                    rojo_manchado_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    rojo_manchado_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("rojo_manchado_btn");
                 }
             }
@@ -489,11 +492,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("marron_manchado_btn")){
-                    marron_manchado_btn.setColorFilter(Color.rgb(238,153,146));
+                    marron_manchado_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("marron_manchado_btn");
                 }
                 else{
-                    marron_manchado_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    marron_manchado_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("marron_manchado_btn");
                 }
             }
@@ -577,11 +580,11 @@ public class TrackerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(track.contains("spm_btn")){
-                    spm_btn.setColorFilter(Color.rgb(238,153,146));
+                    spm_btn.getBackground().setColorFilter(getResources().getColor(R.color.pink), PorterDuff.Mode.SRC_ATOP);
                     track.remove("spm_btn");
                 }
                 else{
-                    spm_btn.setColorFilter(Color.rgb(151, 191, 180));
+                    spm_btn.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.SRC_ATOP);
                     track.add("spm_btn");
                 }
             }

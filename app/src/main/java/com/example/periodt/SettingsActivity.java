@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -66,6 +67,7 @@ public class SettingsActivity extends AppCompatActivity {
                 R.array.notif_array, android.R.layout.simple_spinner_item);
         adapter_fertile.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_fertile.setAdapter(adapter_fertile);
+        spinner_fertile.setSelection(prefs.getInt("days_fertile_notif", 5) - 1);
         spinner_fertile.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
@@ -106,6 +108,7 @@ public class SettingsActivity extends AppCompatActivity {
                 R.array.notif_array, android.R.layout.simple_spinner_item);
         adapter_period.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_period.setAdapter(adapter_period);
+        spinner_period.setSelection(prefs.getInt("days_period_notif", 5) - 1);
         spinner_period.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
@@ -137,6 +140,28 @@ public class SettingsActivity extends AppCompatActivity {
                     editor.putBoolean("period_notif", false);
                 }
                 editor.apply();
+            }
+        });
+
+        // modify period btn
+        Button modify_period_btn = (Button) findViewById(R.id.modify_period_btn);
+        modify_period_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LastperiodActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // logout btn
+        Button logout_btn = (Button) findViewById(R.id.logout_btn);
+        logout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editor.putBoolean("isLogged", false);
+                editor.apply();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
             }
         });
     }

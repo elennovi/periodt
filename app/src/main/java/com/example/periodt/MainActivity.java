@@ -26,8 +26,7 @@ public class MainActivity extends AppCompatActivity {
         boolean isLogged = prefs.getBoolean("isLogged", false);
         Intent intent;
         if(isLogged) {
-            intent = new Intent(this, SignupActivity.class);
-            //intent = new Intent(this, LastperiodActivity.class);
+            intent = new Intent(this, CalendarActivity.class);
         }
         else{
             intent = new Intent(this, SignupActivity.class);

@@ -58,6 +58,9 @@
     <string name="fuerte">Fuerte</string>
     <string name="intenso">Intenso</string>
 
+    <string name="logout">Cerrar sesión</string>
+    <string name="modify_period">Modificar periodo</string>
+
     <string-array name="duration_array">
         <item>2</item>
         <item>3</item>
