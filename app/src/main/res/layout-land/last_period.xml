@@ -7,7 +7,7 @@
     android:background="@color/beige">
 
     <ScrollView
-        android:layout_width="729dp"
+        android:layout_width="match_parent"
         android:layout_height="409dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

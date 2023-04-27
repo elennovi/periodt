@@ -86,7 +86,8 @@ public class CalendarActivity extends AppCompatActivity {
         boolean updated = updateNextPeriod(lastPeriod, duration, cycle);
         if (updated) {
             editor.putBoolean("periodNotifSent", false);
-            editor.putBoolean("periodNotifSent", false);
+            editor.putBoolean("fertileNotifSent", false);
+            editor.apply();
         }
 
         // get calendar
@@ -127,6 +128,10 @@ public class CalendarActivity extends AppCompatActivity {
         // get the settings for the notifications
         boolean period_notif = prefs.getBoolean("period_notif", true);
         int days_period_notif = prefs.getInt("days_period_notif", 5);
+        Log.i("notif", String.valueOf(period_notif));
+        Log.i("till", String.valueOf(daysTillNextPeriod()));
+        Log.i("days_notif", String.valueOf(days_period_notif));
+        Log.i("sent", String.valueOf(periodNotifSent));
         // check if the current day is near the period starting date
         if(period_notif && (Integer.parseInt(daysTillNextPeriod()) <= days_period_notif) && !periodNotifSent){
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
@@ -142,12 +147,17 @@ public class CalendarActivity extends AppCompatActivity {
 
             // Update the sharedPreferences
             editor.putBoolean("periodNotifSent", true);
+            editor.apply();
         }
 
         // get the settings for the notifications
         boolean fertile_notif = prefs.getBoolean("fertile_notif", true);
         int days_fertile_notif = prefs.getInt("days_fertile_notif", 5);
         Boolean fertileNotifSent = prefs.getBoolean("fertileNotifSent", false);
+        Log.i("notif", String.valueOf(fertile_notif));
+        Log.i("till", String.valueOf(daysTillNextFertile()));
+        Log.i("days_notif", String.valueOf(days_fertile_notif));
+        Log.i("sent", String.valueOf(fertileNotifSent));
         // check if the current day is near the fertile period starting date
         if(fertile_notif && (Integer.parseInt(daysTillNextFertile()) <= days_fertile_notif) && !fertileNotifSent){
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
@@ -163,8 +173,8 @@ public class CalendarActivity extends AppCompatActivity {
 
             // Update the sharedPreferences
             editor.putBoolean("fertileNotifSent", true);
+            editor.apply();
         }
-        editor.apply();
     }
 
     private String daysTillNextFertile() {

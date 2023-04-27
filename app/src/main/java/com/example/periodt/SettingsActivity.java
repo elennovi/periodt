@@ -1,23 +1,61 @@
 package com.example.periodt;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
 public class SettingsActivity extends AppCompatActivity {
+
+    private BottomNavigationView navBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.settings);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+        // navbar
+        navBar = findViewById(R.id.navigation_bar);
+        navBar.setSelectedItemId(R.id.it_settings);
+
+        navBar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.it_calendar){
+                    startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                }
+                else if (item.getItemId() == R.id.it_tracker){
+                    startActivity(new Intent(getApplicationContext(), TrackerActivity.class));
+                    overridePendingTransition(0, 0);
+                    return true;
+                }
+                else if (item.getItemId() == R.id.it_settings){
+                    return true;
+                }
+                return false;
+            }
+        });
 
         // preferences
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -29,6 +67,7 @@ public class SettingsActivity extends AppCompatActivity {
                 R.array.notif_array, android.R.layout.simple_spinner_item);
         adapter_fertile.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_fertile.setAdapter(adapter_fertile);
+        spinner_fertile.setSelection(prefs.getInt("days_fertile_notif", 5) - 1);
         spinner_fertile.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
@@ -69,6 +108,7 @@ public class SettingsActivity extends AppCompatActivity {
                 R.array.notif_array, android.R.layout.simple_spinner_item);
         adapter_period.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_period.setAdapter(adapter_period);
+        spinner_period.setSelection(prefs.getInt("days_period_notif", 5) - 1);
         spinner_period.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
@@ -100,6 +140,28 @@ public class SettingsActivity extends AppCompatActivity {
                     editor.putBoolean("period_notif", false);
                 }
                 editor.apply();
+            }
+        });
+
+        // modify period btn
+        Button modify_period_btn = (Button) findViewById(R.id.modify_period_btn);
+        modify_period_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LastperiodActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // logout btn
+        Button logout_btn = (Button) findViewById(R.id.logout_btn);
+        logout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editor.putBoolean("isLogged", false);
+                editor.apply();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
             }
         });
     }
