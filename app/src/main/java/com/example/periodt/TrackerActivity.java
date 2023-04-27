@@ -598,7 +598,7 @@ public class TrackerActivity extends AppCompatActivity {
                 // all the options that are selected need to be saved in the database
                 db.updateTracker(track, uid);
                 // go back to calendar
-                Intent intent = new Intent(getApplicationContext(), CalendarView.class);
+                Intent intent = new Intent(getApplicationContext(), CalendarActivity.class);
                 startActivity(intent);
             }
         });

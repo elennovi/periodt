@@ -61,7 +61,9 @@
     <string name="intenso">Intenso</string>
 
     <string name="logout">Cerrar sesión</string>
-    <string name="modify_period">Modificar periodo</string>
+    <string name="modify_period">Actualizar menstruación</string>
+    <string name="already_tracked">Ya has registrado tu día, ¡pásate por aquí mañana!</string>
+    <string name="warning">AVISO</string>
 
     <string-array name="duration_array">
         <item>2</item>

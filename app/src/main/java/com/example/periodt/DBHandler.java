@@ -18,7 +18,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String DB_NAME = "periodtdb";
 
     // below int is our database version
-    private static final int DB_VERSION = 5;
+    private static final int DB_VERSION = 7;
 
     // below variable is for our table name.
     private static final String USER_TABLE = "PADUser";
@@ -206,6 +206,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // this method is called to check if the table exists already.
         db.execSQL("DROP TABLE IF EXISTS " + USER_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + TRACKING_TABLE);
         onCreate(db);
     }
 
@@ -300,5 +301,24 @@ public class DBHandler extends SQLiteOpenHelper {
         }
         db.insert(TRACKING_TABLE, null, values);
         db.close();
+    }
+
+    public boolean alreadyTracked(String uid){
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String day = sdf.format(date);
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT * FROM " + TRACKING_TABLE + " WHERE uid = ? AND day = ?";
+        String[] selectionArgs = new String[]{uid, day};
+
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+        if (cursor.getCount() <= 0) {
+            cursor.close();
+            return false;
+        }
+        cursor.close();
+        return true;
     }
 }

@@ -7,7 +7,6 @@
     android:background="@color/beige"
     tools:context=".SettingsActivity">
 
-
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="912dp"
@@ -172,7 +171,7 @@
                     android:id="@+id/modify_period_btn"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:backgroundTint="@color/green"
+                    android:backgroundTint="@color/dark_green"
                     android:text="@string/modify_period" />
             </LinearLayout>
         </HorizontalScrollView>
@@ -193,6 +192,7 @@
                     android:id="@+id/logout_btn"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
+                    android:backgroundTint="@color/red"
                     android:text="@string/logout" />
             </LinearLayout>
         </HorizontalScrollView>

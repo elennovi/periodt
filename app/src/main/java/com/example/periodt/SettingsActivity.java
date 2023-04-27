@@ -1,8 +1,10 @@
 package com.example.periodt;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.content.SharedPreferences;
@@ -23,11 +25,20 @@ import com.google.android.material.navigation.NavigationBarView;
 public class SettingsActivity extends AppCompatActivity {
 
     private BottomNavigationView navBar;
+    private DBHandler db;
+    private String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
+
+        db = new DBHandler(SettingsActivity.this);
+
+        // get user uid
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        uid = prefs.getString("uid", "0");
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
@@ -46,9 +57,15 @@ public class SettingsActivity extends AppCompatActivity {
                     return true;
                 }
                 else if (item.getItemId() == R.id.it_tracker){
-                    startActivity(new Intent(getApplicationContext(), TrackerActivity.class));
-                    overridePendingTransition(0, 0);
-                    return true;
+                    if (db.alreadyTracked(uid)){
+                        showMessage();
+                        return false;
+                    }
+                    else {
+                        startActivity(new Intent(getApplicationContext(), TrackerActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    }
                 }
                 else if (item.getItemId() == R.id.it_settings){
                     return true;
@@ -56,10 +73,6 @@ public class SettingsActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-        // preferences
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = prefs.edit();
 
         // fertile dropdown
         Spinner spinner_fertile = (Spinner) findViewById(R.id.fertile_notif_spinner);
@@ -164,5 +177,18 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void showMessage() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        });
+        builder.setMessage(R.string.already_tracked)
+                .setTitle(R.string.warning);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

@@ -1,6 +1,7 @@
 package com.example.periodt;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -11,6 +12,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -46,6 +48,13 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar);
 
+        db = new DBHandler(CalendarActivity.this);
+
+        // get user uid
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        uid = prefs.getString("uid", "0");
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -60,9 +69,15 @@ public class CalendarActivity extends AppCompatActivity {
                     return true;
                 }
                 else if (item.getItemId() == R.id.it_tracker){
-                    startActivity(new Intent(getApplicationContext(), TrackerActivity.class));
-                    overridePendingTransition(0, 0);
-                    return true;
+                    if (db.alreadyTracked(uid)){
+                        showMessage();
+                        return false;
+                    }
+                    else {
+                        startActivity(new Intent(getApplicationContext(), TrackerActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    }
                 }
                 else if (item.getItemId() == R.id.it_settings){
                     startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
@@ -72,12 +87,6 @@ public class CalendarActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-        db = new DBHandler(CalendarActivity.this);
-        // get user uid
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = prefs.edit();
-        uid = prefs.getString("uid", "0");
 
         // update next period
         String lastPeriod = db.getLastPeriod(uid);
@@ -175,6 +184,19 @@ public class CalendarActivity extends AppCompatActivity {
             editor.putBoolean("fertileNotifSent", true);
             editor.apply();
         }
+    }
+
+    private void showMessage() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+            }
+        });
+        builder.setMessage(R.string.already_tracked)
+                .setTitle(R.string.warning);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private String daysTillNextFertile() {
