@@ -4,7 +4,7 @@
     <string name="last_period">ÚLTIMO PERIODO</string>
     <string name="last_period_date">Fecha de comienzo de tu último periodo</string>
     <string name="last_period_duration">¿Cuántos días suele durar tu periodo?</string>
-    <string name="last_period_regularity">¿Tu menstruación suele ser regular?</string>
+    <string name="last_period_regularity">¿Cuánto suele durar tu ciclo menstrual?</string>
     <string name="input_date">DD/MM/AAAA</string>
     <string name="dropdown">Selecciona uno</string>
     <string name="calendar">CALENDARIO</string>
@@ -21,5 +21,92 @@
     <string name="register_text">¿No tienes una cuenta?</string>
     <string name="login_redirect"><u>Inicia Sesión</u></string>
     <string name="register_redirect"><u>Regístrate</u></string>
+
+    <string name="error">ERROR</string>
+    <string name="same_pwd_error">Las contraseñas introducidas no son iguales</string>
+    <string name="taken_email">El correo introducido ya está en uso</string>
+    <string name="incorrect_pwd">La contraseña introducida no es correcta</string>
+    <string name="email_not_found">El correo introducido no existe</string>
+    <string name="invalid_date">La fecha introducida no es válida</string>
+
+    <string name="channel_name">Notificaciones</string>
+    <string name="channel_description">Notificaciones de recordatorio de periodo menstrual y fértil</string>
+    <string name="period_notification_title">MENSTRUACION</string>
+    <string name="period_notification_msg">¡Quedan menos de 5 días para tu menstruación!</string>
+    <string name="fertile_notification_title">FERTILIDAD</string>
+    <string name="fertile_notification_msg">¡Quedan menos de 5 días para tu periodo fertil!</string>
+
+    <string name="notification_text">Notificaciones</string>
+    <string name="fertile_notif_text">Notificación periodo fértil</string>
+    <string name="fertile_days_notif">Aviso comienzo ciclo fértil</string>
+    <string name="period_notif_text">Notificación ciclo menstrual</string>
+    <string name="period_days_notif">Aviso comienzo ciclo menstrual</string>
+
+    <string name="tracker_heading">Seguimiento</string>
+    <string name="period_text">He tenido la regla hoy</string>
+    <string name="sympton_text">Síntomas</string>
+    <string name="secrecion_text">Secreción</string>
+    <string name="deseo_text">Deseo sexual</string>
+    <string name="cantidad_text">Cantidad de periodo</string>
+    <string name="manchado_text">Manchado</string>
+    <string name="bienestar_text">Bienestar</string>
+    <string name="spm_text">SPM</string>
+    <string name="save_btn">GUARDAR</string>
+    <string name="bajo">Bajo</string>
+    <string name="medio">Medio</string>
+    <string name="alto">Alto</string>
+    <string name="ligero">Ligero</string>
+    <string name="moderado">Moderado</string>
+    <string name="fuerte">Fuerte</string>
+    <string name="intenso">Intenso</string>
+
+    <string name="logout">Cerrar sesión</string>
+    <string name="modify_period">Actualizar menstruación</string>
+    <string name="already_tracked">Ya has registrado tu día, ¡pásate por aquí mañana!</string>
+    <string name="warning">AVISO</string>
+
+    <string-array name="duration_array">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="regular_array">
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+    </string-array>
+
+    <string-array name="notif_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
 
 </resources>
